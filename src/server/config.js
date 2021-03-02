@@ -37,6 +37,13 @@ module.exports = app =>{
     //static files
     app.use('/public', express.static(path.join(__dirname, '../public')));
 
+    //404
+    app.use(function (req, res) {
+        if (res.status(404)) {
+            res.render('404');
+        }
+      });
+
     //errorhandlers
     if  ('development' === app.get('env')) {
         app.use(errorhandler);
