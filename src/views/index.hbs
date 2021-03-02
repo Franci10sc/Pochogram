@@ -1,0 +1,51 @@
+<!-- Vista del Inicio -->
+<div class="card">
+    <div class="card-header bg-dark">
+        <h3 class="card-title text-white">
+            <i class="far fa-image"></i>
+            Subir Fotos
+        </h3>
+    </div>
+    <div class="card-body">
+        <form action="/images" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" name="image" class="custom-file-input" id="inputGroup"
+                            aria-describedby="inputGroupFileAddon" required>
+                        <label for="inputGroupFile" class="custom-file-label">Elige Foto!</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" name="title" class="form-control" placeholder="Titulo de la imagen" required>
+            </div>
+            <div class="form-group">
+                <textarea name="description" rows="2" class="form-control" placeholder="Descripción de imagen"
+                    required></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success">
+                    <i class="fa fa-upload mr-2"></i> Subir
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card mt-2">
+    <div class="card-header bg-dark text-white">
+        <h3><i class="far fa-images mr-2"></i>Subidas Recientes</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            {{#each images}}
+            <div class="col-md-4">
+                <a href="/images/{{uniqueId}}">
+                    <img src='/public/upload/{{filename}}' alt="" class="w-100 h-100 img-thumbnail">
+                </a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
