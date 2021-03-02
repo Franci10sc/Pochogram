@@ -1,5 +1,5 @@
 {
-  "name": "Instagrom",
+  "name": "Pochogram",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Franci10sc/Instagrom.git"
+    "url": "git+https://github.com/Franci10sc/Pochogram.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Franci10sc/Instagrom/issues"
+    "url": "https://github.com/Franci10sc/Pochogram/issues"
   },
-  "homepage": "https://github.com/Franci10sc/Instagrom#readme",
+  "homepage": "https://github.com/Franci10sc/Pochogram#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
     "errorhandler": "^1.5.1",
