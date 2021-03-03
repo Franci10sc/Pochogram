@@ -4,6 +4,8 @@ const Comments = require('./comments');
 
 module.exports = async viewModel => {
 
+//Muestra los componenetes del sidebar
+
         const results = await Promise.all([
             Stats(),
             Images.popular(),

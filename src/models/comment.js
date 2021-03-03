@@ -1,6 +1,6 @@
 const {Schema, model} = require('mongoose');
 const {ObjectId} = Schema;
-
+//Schema de los comentarios
 const CommentSchema = new Schema({
     image_id:{type: ObjectId},
     email: {type: String},

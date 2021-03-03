@@ -1,5 +1,6 @@
 const helpers = {};
 
+//Crear nombre random para guardar la imagen
 helpers.random = () => {
     const possible ='abcdefghijklmnopqrstuvwxyz0123456789'
     let randomString = 0;

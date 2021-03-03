@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
 const path = require('path');
-
+//Schema de las imagenes
 const ImageSchema = new Schema({
     title: {type: String},
     description: {type: String},

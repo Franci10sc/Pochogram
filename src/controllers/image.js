@@ -8,9 +8,9 @@ const sidebar = require('../helpers/sidebar');
 
 const ctrl = {};
 
+//Controlador pagina inicio
 ctrl.index = async (req, res) => {
     let viewModel = {image: {}, coments: {}};
-
     const image = await Image.findOne({ filename: { $regex: req.params.image_id } });
     if (image) {
         image.views = image.views + 1;
@@ -49,7 +49,7 @@ ctrl.create = (req, res) => {
                 res.redirect('/images/' + imgUrl);
             } else {
                 await fs.unlink(imageTempPath);
-                res.status(500).json({ error: 'Solo imagenes permitidas' });
+                res.status(500).render('500');
             }
         }
     };
@@ -58,6 +58,7 @@ ctrl.create = (req, res) => {
 
 };
 
+//controlador like
 ctrl.like = async (req, res) => {
     const image = await Image.findOne({filename: {$regex: req.params.image_id}})
     if (image) {
@@ -65,10 +66,11 @@ ctrl.like = async (req, res) => {
         await image.save();
         res.json({likes: image.likes});
     }else{
-        res.status(500).json({error: 'Internal Error'});
+        res.status(500).render('500');
     }
 };
 
+//Controlador comentarios(Guarda y muestra)
 ctrl.comment = async (req, res) => {
     const image = await Image.findOne({ filename: { $regex: req.params.image_id } });
     if (image) {
