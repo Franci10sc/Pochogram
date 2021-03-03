@@ -1,10 +1,12 @@
-
+//mostrar zona comentarios
 $('#post-comment').hide();
 $('#btn-toggle-comment').click(e =>{
     e.preventDefault();
     $('#post-comment').slideToggle();
 });
 
+
+//dar like
 $('#btn-like').click(function(e){
     e.preventDefault();
     let imgId = $(this).data('id');
@@ -15,6 +17,8 @@ $('#btn-like').click(function(e){
         });
 });
 
+
+//eliminar imagen
 $('#btn-delete').click(function(e) {
     e.preventDefault();
     let $this = $(this);
@@ -32,3 +36,9 @@ $('#btn-delete').click(function(e) {
         });
     }
 });
+
+//Mostrar el nombre del archivo cuando lo seleccionas
+$(".custom-file-input").on("change", function() {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
